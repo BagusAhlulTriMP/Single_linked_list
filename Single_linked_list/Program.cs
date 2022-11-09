@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -65,6 +66,21 @@ namespace Single_linked_list
 
             nodeBaru.next = current;
             previous.next = nodeBaru;
+
+        }
+
+        /*Method untuk menghapus node tertentu didalam list*/
+        public bool delnode(int nim)
+        {
+            node previous,current;
+            previous = current = null;
+            /*check apakah node yang dimaksud ada didalam list atau tidak*/
+            if(Search(nim, ref previous, ref current) == false)
+                return false;
+            previous.next = current.next;
+            if (current == START)
+                START = START.next;
+            return true;
 
         }
     }
