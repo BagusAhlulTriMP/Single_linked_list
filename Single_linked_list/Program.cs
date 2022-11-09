@@ -103,6 +103,21 @@ namespace Single_linked_list
         }
 
         /*Method untuk Traverse/mengunjungi dan membaca isi list*/
+        public void traverse()
+        {
+            if (listEmpty())
+                Console.WriteLine("\nList kosong. \n");
+            else
+            {
+                Console.WriteLine("\nData didalam list adalah : \n");
+                node currentnode;
+                for (currentnode = START; currentnode != null; currentnode = currentnode.next)
+                    Console.Write(currentnode.noMhs + " " + currentnode.nama + "\n");
+                Console.WriteLine();
+            }
+        }
+
+
     }
         
         }
